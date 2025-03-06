@@ -8,7 +8,7 @@ init() async {
   try {
     await Future.wait([]);
   } catch (e) {
-    print("Error loading preferences or environment variables: $e");
+    debugPrint("Error loading preferences or environment variables: $e");
   }
 }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/app_string.dart';
-import 'package:portfolio/view/component/text/common_text.dart';
 
 import 'header_item.dart';
 
