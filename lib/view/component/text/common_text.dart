@@ -8,7 +8,7 @@ class CommonText extends StatelessWidget {
   const CommonText({
     super.key,
     this.maxLines = 1,
-    this.textAlign = TextAlign.center,
+    this.textAlign = TextAlign.start,
     this.left = 0,
     this.right = 0,
     this.top = 0,
@@ -50,7 +50,7 @@ class CommonText extends StatelessWidget {
         overflow: overflow,
         style:
             style == true
-                ? GoogleFonts.plusJakartaSans(
+                ? GoogleFonts.adamina(
                   fontSize: fontSize,
                   fontWeight: fontWeight,
                   color: color,

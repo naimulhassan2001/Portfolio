@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 
-import 'widgets/header.dart';
+import '../../component/footer/footer.dart';
+import '../../component/header/header.dart';
 import 'widgets/hero_section.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(children: [header(), 40.height, heroSection()]),
+          child: Column(
+            children: [header(), 40.height, heroSection(), footer()],
+          ),
         ),
       ),
     );

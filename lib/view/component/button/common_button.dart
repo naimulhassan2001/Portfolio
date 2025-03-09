@@ -12,8 +12,6 @@ class CommonButton extends StatelessWidget {
   final double titleSize;
   final FontWeight titleWeight;
   final double buttonRadius;
-  final double buttonHeight;
-  final double buttonWidth;
 
   final bool isLoading;
 
@@ -25,10 +23,8 @@ class CommonButton extends StatelessWidget {
     this.titleSize = 16,
     this.buttonRadius = 10,
     this.titleWeight = FontWeight.w700,
-    this.buttonHeight = 60,
     this.borderWidth = 1,
     this.isLoading = false,
-    this.buttonWidth = double.infinity,
     this.borderColor = AppColors.blue,
     super.key,
   });
@@ -58,7 +54,7 @@ class CommonButton extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.eagleLake(
+                style: GoogleFonts.poppins(
                   color: titleColor,
                   fontSize: titleSize,
                   fontWeight: titleWeight,

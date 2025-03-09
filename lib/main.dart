@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: Get.key,
       defaultTransition: Transition.fadeIn,
       theme: themeData,
-      transitionDuration: const Duration(milliseconds: 300),
+      transitionDuration: const Duration(milliseconds: 400),
       initialRoute: AppRoutes.home,
       getPages: AppRoutes.routes,
     );
