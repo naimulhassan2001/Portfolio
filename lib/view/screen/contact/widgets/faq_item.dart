@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/helpers/my_extension.dart';
 import 'package:portfolio/utils/app_colors.dart';
-import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

@@ -25,23 +25,21 @@ Widget faqSection() {
     {"question": AppString.doYouOfferRevisions, "answer": AppString.testText},
   ];
 
-  return Container(
-    child: Column(
-      children: [
-        CommonText(
-          text: AppString.faq,
-          fontSize: 64,
-          fontWeight: FontWeight.bold,
-        ),
-        CommonText(
-          text: AppString.faqDetails,
-          fontSize: 36,
-          maxLines: 2,
-          fontWeight: FontWeight.bold,
-        ),
+  return Column(
+    children: [
+      CommonText(
+        text: AppString.faq,
+        fontSize: 64,
+        fontWeight: FontWeight.bold,
+      ),
+      CommonText(
+        text: AppString.faqDetails,
+        fontSize: 36,
+        maxLines: 2,
+        fontWeight: FontWeight.bold,
+      ),
 
-        ...List.generate(faqs.length, (index) => FaqItem(item: faqs[index])),
-      ],
-    ),
+      ...List.generate(faqs.length, (index) => FaqItem(item: faqs[index])),
+    ],
   );
 }

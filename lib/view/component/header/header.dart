@@ -21,12 +21,18 @@ Widget header() {
           title: AppString.home,
           onTap: () => Get.toNamed(AppRoutes.home),
         ),
-        headerItem(title: AppString.project),
+        headerItem(
+          title: AppString.project,
+          onTap: () => Get.toNamed(AppRoutes.project),
+        ),
         headerItem(
           title: AppString.skills,
           onTap: () => Get.toNamed(AppRoutes.skills),
         ),
-        headerItem(title: AppString.about),
+        headerItem(
+          title: AppString.about,
+          onTap: () => Get.toNamed(AppRoutes.about),
+        ),
         headerItem(
           title: AppString.contact,
           onTap: () => Get.toNamed(AppRoutes.contact),

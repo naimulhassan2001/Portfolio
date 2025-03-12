@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/app_images.dart';

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
 import '../../component/header/header.dart';
 
 class SkillScreen extends StatelessWidget {
-  SkillScreen({super.key});
+  const SkillScreen({super.key});
 
   final List<TimelineItem> timelineItems = const [
     TimelineItem(
@@ -36,77 +35,72 @@ class SkillScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Get.width);
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        child: SizedBox(
-          width: 1200,
-          child: Column(children: [
-            header(),
-            50.height,
-            Stack(
-              children: [
-                Container(
-                  width: 4,
-                  height: 1000,
-                  decoration: BoxDecoration(color: Colors.green),
-                ).center,
-                Center(
-                  child: SizedBox(
-                    width: 1200,
-                    child: ListView.builder(
-                      padding: EdgeInsets.zero,
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: timelineItems.length,
-                      itemBuilder: (context, index) {
-                        final item = timelineItems[index];
+        child: Column(children: [
+          header(),
+          50.height,
+          Stack(
+            children: [
+              Container(
+                width: 4,
+                height: 1000,
+                decoration: BoxDecoration(color: Colors.green),
+              ).center,
+              Center(
+                child: SizedBox(
+                  width: 1200,
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: timelineItems.length,
+                    itemBuilder: (context, index) {
+                      final item = timelineItems[index];
 
-                        bool isRight = index.isEven;
+                      bool isRight = index.isEven;
 
-                        return Column(
-                          children: [
-
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                  color: Colors.green, shape: BoxShape.circle),
-                            ).center,
-                            Container(
-                                margin: EdgeInsets.only(
-                                    right: isRight ? 650 : 0,
-                                    left: isRight ? 0 : 650),
-                                child: Align(
-                                  alignment: isRight
-                                      ? Alignment.topRight
-                                      : Alignment.topLeft,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: isRight
-                                        ? CrossAxisAlignment.end
-                                        : CrossAxisAlignment.start,
-                                    children: [
-                                      CommonText(text: item.year),
-                                      CommonText(text: item.title),
-                                      CommonText(text: item.role),
-                                      CommonText(
-                                        text: item.subtitle,
-                                      ),
-                                    ],
-                                  ),
-                                )),
-                          ],
-                        );
-                      },
-                    ),
+                      return Column(
+                        children: [
+                          Container(
+                            height: 20,
+                            width: 20,
+                            decoration: BoxDecoration(
+                                color: Colors.green, shape: BoxShape.circle),
+                          ).center,
+                          Container(
+                              margin: EdgeInsets.only(
+                                  right: isRight ? 650 : 0,
+                                  left: isRight ? 0 : 650),
+                              child: Align(
+                                alignment: isRight
+                                    ? Alignment.topRight
+                                    : Alignment.topLeft,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: isRight
+                                      ? CrossAxisAlignment.end
+                                      : CrossAxisAlignment.start,
+                                  children: [
+                                    CommonText(text: item.year),
+                                    CommonText(text: item.title),
+                                    CommonText(text: item.role),
+                                    CommonText(
+                                      text: item.subtitle,
+                                    ),
+                                  ],
+                                ),
+                              )),
+                        ],
+                      );
+                    },
                   ),
                 ),
-              ],
-            )
-          ]),
-        ),
+              ),
+            ],
+          )
+        ]),
       )),
     );
   }
