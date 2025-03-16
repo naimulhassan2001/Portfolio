@@ -50,7 +50,7 @@ class CommonText extends StatelessWidget {
         overflow: overflow,
         style:
             style == true
-                ? GoogleFonts.adamina(
+                ? GoogleFonts.poppins(
                   fontSize: fontSize,
                   fontWeight: fontWeight,
                   color: color,

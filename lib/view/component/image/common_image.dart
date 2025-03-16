@@ -11,8 +11,8 @@ class CommonImage extends StatelessWidget {
   final String imageSrc;
   final String defaultImage;
   final Color? imageColor;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final double borderRadius;
   final double? size;
   final ImageType imageType;
@@ -21,12 +21,12 @@ class CommonImage extends StatelessWidget {
   CommonImage({
     required this.imageSrc,
     this.imageColor,
-    this.height = 24,
+    this.height,
     this.borderRadius = 0,
-    this.width = 24,
+    this.width,
     this.size,
     this.imageType = ImageType.svg,
-    this.fill = BoxFit.fill,
+    this.fill = BoxFit.contain,
     this.defaultImage = AppImages.profile,
     super.key,
   });
@@ -70,16 +70,15 @@ class CommonImage extends StatelessWidget {
         height: size ?? height,
         width: size ?? width,
         imageUrl: imageSrc,
-        imageBuilder:
-            (context, imageProvider) => Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(borderRadius),
-                image: DecorationImage(image: imageProvider, fit: BoxFit.fill),
-              ),
-            ),
-        progressIndicatorBuilder:
-            (context, url, downloadProgress) =>
-                CircularProgressIndicator(value: downloadProgress.progress),
+        fit: fill,
+        imageBuilder: (context, imageProvider) => Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius),
+            image: DecorationImage(image: imageProvider, fit: fill),
+          ),
+        ),
+        progressIndicatorBuilder: (context, url, downloadProgress) =>
+            CircularProgressIndicator(value: downloadProgress.progress),
         errorWidget: (context, url, error) {
           if (kDebugMode) {
             print(error);

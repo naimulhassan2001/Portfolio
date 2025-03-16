@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/component/footer/footer.dart';
 import 'package:portfolio/view/component/header/header.dart';
 import 'package:portfolio/view/screen/project/widgets/project_item.dart';
 
