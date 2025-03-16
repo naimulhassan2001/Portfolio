@@ -13,7 +13,7 @@ class CommonText extends StatelessWidget {
     this.right = 0,
     this.top = 0,
     this.bottom = 0,
-    this.fontSize = 24,
+    this.fontSize = 20,
     this.fontWeight = FontWeight.w400,
     this.color = AppColors.white,
     required this.text,

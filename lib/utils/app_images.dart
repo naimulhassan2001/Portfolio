@@ -4,4 +4,5 @@ class AppImages {
   static const String profile = "$baseurl/profile.png";
 
   static const String naimul = "$baseurl/naimul.png";
+  static const String img = "$baseurl/img.png";
 }

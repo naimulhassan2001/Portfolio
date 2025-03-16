@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/component/footer/footer.dart';
 import 'package:portfolio/view/component/header/header.dart';
+import 'package:portfolio/view/screen/project/widgets/project_item.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({super.key});
@@ -13,13 +14,13 @@ class ProjectScreen extends StatelessWidget {
           header(),
           Expanded(
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 1,
               itemBuilder: (context, index) {
-                return Container();
+                return projectItem();
               },
             ),
           ),
-          footer()
+          // footer()
         ],
       ),
     );
