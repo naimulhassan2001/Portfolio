@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
 
+import '../../controller/project_controller.dart';
+
 
 
 class DependencyInjection extends Bindings {
   @override
   void dependencies() {
-    // Get.lazyPut(() => SignUpController(), fenix: true);
+     Get.lazyPut(() => ProjectController(), fenix: true);
   }
 }

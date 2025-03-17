@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/my_extension.dart';
+import 'package:portfolio/model/project_model.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/app_images.dart';
 import 'package:portfolio/view/component/image/common_image.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
-Widget projectItem() {
+Widget projectItem(ProjectModel item) {
   return Container(
     padding: EdgeInsets.all(20),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CommonText(
-          text: "Russend",
+          text: item.name,
           fontSize: 30,
           fontWeight: FontWeight.bold,
         ),
@@ -20,8 +21,7 @@ Widget projectItem() {
             maxLines: 10,
             style: true,
             fontSize: 16,
-            text:
-                "Russend is a money transfer app designed to facilitate easy and secure financial transactions from Russia to Central African countries."),
+            text: item.shortDescription),
         20.height,
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -32,30 +32,24 @@ Widget projectItem() {
               child: Column(
                 children: [
                   CommonImage(
-                      imageType: ImageType.png,
-                    
-                      imageSrc: AppImages.img),
+                      imageType: ImageType.png, imageSrc: item.images.first),
                   20.height,
-                  Row(
-                    spacing: 12,
-                    children: [
-                      CommonImage(
-                          imageType: ImageType.png,
-                          width: 100,
-                          imageSrc: AppImages.img),
-                      CommonImage(
-                          imageType: ImageType.png,
-                          width: 100,
-                          imageSrc: AppImages.img),
-                      CommonImage(
-                          imageType: ImageType.png,
-                          width: 100,
-                          imageSrc: AppImages.img),
-                      CommonImage(
-                          imageType: ImageType.png,
-                          width: 100,
-                          imageSrc: AppImages.img),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                        item.images.length,
+                        (index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 6),
+                            child: CommonImage(
+                                imageType: ImageType.png,
+                                width: 100,
+                                imageSrc: AppImages.img),
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -74,7 +68,7 @@ Widget projectItem() {
                   10.height,
                   Row(
                     children: List.generate(
-                      4,
+                      item.technology.length,
                       (index) => Container(
                         padding:
                             EdgeInsets.symmetric(horizontal: 12, vertical: 4),
@@ -83,7 +77,7 @@ Widget projectItem() {
                             color: AppColors.blue,
                             borderRadius: BorderRadius.circular(30)),
                         child: CommonText(
-                          text: "Socket.IO",
+                          text: item.technology[index],
                           style: true,
                           fontSize: 16,
                           color: AppColors.textColor,
@@ -98,37 +92,22 @@ Widget projectItem() {
                     fontSize: 24,
                   ),
                   10.height,
-                  CommonText(
-                      maxLines: 3,
-                      fontSize: 15,
-                      style: true,
-                      color: AppColors.textColor,
-                      text:
-                          "• Integrated to support mobile money transfers via services like Orange Money, and MTN"),
-                  10.height,
-                  CommonText(
-                      maxLines: 3,
-                      fontSize: 15,
-                      style: true,
-                      color: AppColors.textColor,
-                      text:
-                          "• Integrated to support mobile money transfers via services like Orange Money, and MTN"),
-                  10.height,
-                  CommonText(
-                      maxLines: 3,
-                      fontSize: 15,
-                      style: true,
-                      color: AppColors.textColor,
-                      text:
-                          "• Integrated to support mobile money transfers via services like Orange Money, and MTN"),
-                  10.height,
-                  CommonText(
-                      maxLines: 3,
-                      fontSize: 15,
-                      style: true,
-                      color: AppColors.textColor,
-                      text:
-                          "• Integrated to support mobile money transfers via services like Orange Money, and MTN"),
+                  ListView.builder(
+                    itemCount: item.features.length,
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: CommonText(
+                            maxLines: 3,
+                            fontSize: 15,
+                            style: true,
+                            color: AppColors.textColor,
+                            text: item.features[index]),
+                      );
+                    },
+                  ),
                   10.height,
                   CommonText(
                     text: "Deployment",
@@ -166,7 +145,7 @@ Widget projectItem() {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CommonText(text: "Year"),
-                              CommonText(text: "2024"),
+                              CommonText(text: item.completedYear)
                             ],
                           ),
                         ),
@@ -185,6 +164,7 @@ Widget projectItem() {
                               CommonText(text: "Role"),
                               CommonText(
                                   maxLines: 3,
+                                  fontSize: 16,
                                   text:
                                       "Backend Development\nAPI Integration\nPayment Gateway Integration"),
                             ],
@@ -193,26 +173,52 @@ Widget projectItem() {
                       ),
                     ],
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                        color: AppColors.blue,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.open_in_new,
-                          size: 20,
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                            color: AppColors.blue,
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.open_in_new,
+                              size: 20,
+                            ),
+                            6.width,
+                            CommonText(
+                              text: "Play Store",
+                              color: Colors.black,
+                              fontSize: 18,
+                            ),
+                          ],
                         ),
-                        6.width,
-                        CommonText(
-                          text: "Live Demo",
-                          color: Colors.black,
-                          fontSize: 18,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 12),
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                            color: AppColors.blue,
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.open_in_new,
+                              size: 20,
+                            ),
+                            6.width,
+                            CommonText(
+                              text: "App Store",
+                              color: Colors.black,
+                              fontSize: 18,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   )
                 ],
               ),
