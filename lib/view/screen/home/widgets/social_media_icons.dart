@@ -28,13 +28,12 @@ class SocialIconsState extends State<SocialIcons> {
   String activeButton = '';
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
+  Widget build(BuildContext context) => Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:
             sites.keys.map((site) {
-              final isActive = activeButton == site;
+              bool isActive = activeButton == site;
 
               return MouseRegion(
                 onEnter: (_) {
@@ -91,16 +90,14 @@ class SocialIconsState extends State<SocialIcons> {
                             end: isActive ? 1.2 : 1.0,
                           ),
                           curve: Curves.easeInOut,
-                          builder: (context, scale, child) {
-                            return Transform.scale(
+                          builder: (context, scale, child) => Transform.scale(
                               scale: scale,
                               child: Icon(
                                 icons[site],
                                 size: btnSize * 0.4,
                                 color: isActive ? Colors.white : sites[site],
                               ),
-                            );
-                          },
+                            ),
                         ),
                       ),
                     ],
@@ -110,5 +107,4 @@ class SocialIconsState extends State<SocialIcons> {
             }).toList(),
       ),
     );
-  }
 }

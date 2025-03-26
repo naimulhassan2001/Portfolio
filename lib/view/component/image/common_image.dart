@@ -3,20 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../utils/app_images.dart';
+import 'package:portfolio/utils/app_images.dart';
 
 enum ImageType { png, svg, network }
 
 class CommonImage extends StatelessWidget {
-  final String imageSrc;
-  final String defaultImage;
-  final Color? imageColor;
-  final double? height;
-  final double? width;
-  final double borderRadius;
-  final double? size;
-  final ImageType imageType;
-  final BoxFit fill;
 
   CommonImage({
     required this.imageSrc,
@@ -30,6 +21,15 @@ class CommonImage extends StatelessWidget {
     this.defaultImage = AppImages.profile,
     super.key,
   });
+  final String imageSrc;
+  final String defaultImage;
+  final Color? imageColor;
+  final double? height;
+  final double? width;
+  final double borderRadius;
+  final double? size;
+  final ImageType imageType;
+  final BoxFit fill;
 
   late Widget imageWidget;
 
@@ -57,7 +57,7 @@ class CommonImage extends StatelessWidget {
           fit: fill,
           errorBuilder: (context, error, stackTrace) {
             if (kDebugMode) {
-              print("imageError : $error");
+              print('imageError : $error');
             }
             return Image.asset(defaultImage);
           },

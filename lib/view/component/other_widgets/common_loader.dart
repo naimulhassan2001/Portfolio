@@ -7,11 +7,9 @@ class CommonLoader extends StatelessWidget {
   final double size;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
+  Widget build(BuildContext context) => SizedBox(
       height: size,
       width: size,
       child: const CircularProgressIndicator.adaptive(),
     );
-  }
 }

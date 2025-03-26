@@ -46,8 +46,7 @@ class _FaqItemState extends State<FaqItem> with SingleTickerProviderStateMixin {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
+  Widget build(BuildContext context) => GestureDetector(
       onTap: _toggleExpansion,
       child: AnimatedContainer(
         width: Get.width > 700 ? 700 : Get.width,
@@ -68,7 +67,6 @@ class _FaqItemState extends State<FaqItem> with SingleTickerProviderStateMixin {
                 children: [
                   CommonText(
                     text: widget.item['question'],
-                    fontWeight: FontWeight.w400,
                     fontSize: 24,
                     style: true,
                     bottom: 10,
@@ -78,26 +76,21 @@ class _FaqItemState extends State<FaqItem> with SingleTickerProviderStateMixin {
                     transitionBuilder: (
                       Widget child,
                       Animation<double> animation,
-                    ) {
-                      return FadeTransition(
+                    ) => FadeTransition(
                         opacity: animation,
                         child: SizeTransition(
                           sizeFactor: animation,
                           axisAlignment: -1.0,
                           child: child,
                         ),
-                      );
-                    },
+                      ),
                     child:
                         isExpanded
                             ? CommonText(
                               key: ValueKey<bool>(isExpanded),
                               text: widget.item['answer'],
                               maxLines: 10,
-                              fontWeight: FontWeight.w400,
                               style: true,
-                              textAlign: TextAlign.start,
-                              fontSize: 20,
                             )
                             : SizedBox.shrink(),
                   ),
@@ -115,5 +108,4 @@ class _FaqItemState extends State<FaqItem> with SingleTickerProviderStateMixin {
         ),
       ),
     );
-  }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'core/theme/light_theme.dart';
-import 'core/route/app_routes.dart';
-import 'core/dependency/dependency_injection.dart';
+import 'package:portfolio/core/theme/light_theme.dart';
+import 'package:portfolio/core/route/app_routes.dart';
+import 'package:portfolio/core/dependency/dependency_injection.dart';
 
 init() async {
   try {
     await Future.wait([]);
   } catch (e) {
-    debugPrint("Error loading preferences or environment variables: $e");
+    debugPrint('Error loading preferences or environment variables: $e');
   }
 }
 
@@ -26,8 +26,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
+  Widget build(BuildContext context) => GetMaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: Get.key,
       defaultTransition: Transition.fadeIn,
@@ -36,5 +35,4 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.home,
       getPages: AppRoutes.routes,
     );
-  }
 }

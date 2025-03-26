@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../utils/app_colors.dart';
+import 'package:portfolio/utils/app_colors.dart';
 
 class PopUpMenu extends StatelessWidget {
   const PopUpMenu({
@@ -28,8 +28,7 @@ class PopUpMenu extends StatelessWidget {
   final IconData iconData;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
+  Widget build(BuildContext context) => SizedBox(
       height: height,
       child: PopupMenuButton<String>(
         shape: RoundedRectangleBorder(
@@ -80,5 +79,4 @@ class PopUpMenu extends StatelessWidget {
         ),
       ),
     );
-  }
 }

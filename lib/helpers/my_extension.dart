@@ -9,7 +9,7 @@ extension View on num {
 extension View2 on Widget {
   Widget get start => Align(alignment: Alignment.centerLeft, child: this);
   Widget get end => Align(alignment: Alignment.centerRight, child: this);
-  Widget get center => Align(alignment: Alignment.center, child: this);
+  Widget get center => Align(child: this);
 }
 
 extension View3 on DateTime {

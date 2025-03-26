@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../utils/app_colors.dart';
-import '../image/common_image.dart';
-import '../text/common_text.dart';
+import 'package:portfolio/utils/app_colors.dart';
+import 'package:portfolio/view/component/image/common_image.dart';
+import 'package:portfolio/view/component/text/common_text.dart';
 
 class Item extends StatelessWidget {
   const Item({
     super.key,
     this.icon,
     required this.title,
-    this.image = "",
+    this.image = '',
     this.disableDivider = false,
     this.onTap,
     this.color = AppColors.black,
@@ -28,8 +28,7 @@ class Item extends StatelessWidget {
   final double horizontal;
 
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
+  Widget build(BuildContext context) => InkWell(
       onTap: onTap,
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -46,7 +45,6 @@ class Item extends StatelessWidget {
                 CommonText(
                   text: title,
                   color: color,
-                  fontWeight: FontWeight.w400,
                   fontSize: 18,
                   left: 16,
                 ),
@@ -61,5 +59,4 @@ class Item extends StatelessWidget {
         ),
       ),
     );
-  }
 }

@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../utils/app_colors.dart';
+import 'package:portfolio/utils/app_colors.dart';
 
 class CommonButton extends StatelessWidget {
-  final VoidCallback? onTap;
-  final String titleText;
-  final Color titleColor;
-  final Color buttonColor;
-  final Color? borderColor;
-  final double borderWidth;
-  final double titleSize;
-  final FontWeight titleWeight;
-  final double buttonRadius;
-
-  final bool isLoading;
 
   const CommonButton({
     this.onTap,
@@ -28,10 +17,20 @@ class CommonButton extends StatelessWidget {
     this.borderColor = AppColors.blue,
     super.key,
   });
+  final VoidCallback? onTap;
+  final String titleText;
+  final Color titleColor;
+  final Color buttonColor;
+  final Color? borderColor;
+  final double borderWidth;
+  final double titleSize;
+  final FontWeight titleWeight;
+  final double buttonRadius;
+
+  final bool isLoading;
 
   @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
+  Widget build(BuildContext context) => ElevatedButton(
       onPressed: onTap,
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(buttonColor),
@@ -61,5 +60,4 @@ class CommonButton extends StatelessWidget {
                 ),
               ),
     );
-  }
 }

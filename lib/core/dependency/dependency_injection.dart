@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../controller/project_controller.dart';
+import 'package:portfolio/controller/project_controller.dart';
 
 
 

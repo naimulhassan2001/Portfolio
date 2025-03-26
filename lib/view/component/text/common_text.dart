@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../utils/app_colors.dart';
+import 'package:portfolio/utils/app_colors.dart';
 
 class CommonText extends StatelessWidget {
   const CommonText({
@@ -35,8 +35,7 @@ class CommonText extends StatelessWidget {
   final bool style;
 
   @override
-  Widget build(BuildContext context) {
-    return Padding(
+  Widget build(BuildContext context) => Padding(
       padding: EdgeInsets.only(
         left: left,
         right: right,
@@ -62,5 +61,4 @@ class CommonText extends StatelessWidget {
                 ),
       ),
     );
-  }
 }

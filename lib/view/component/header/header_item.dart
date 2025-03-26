@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../text/common_text.dart';
+import 'package:portfolio/view/component/text/common_text.dart';
 
-Widget headerItem({required String title, VoidCallback? onTap}) {
-  return TextButton(onPressed: onTap, child: CommonText(text: title));
-}
+Widget headerItem({required String title, VoidCallback? onTap}) => TextButton(onPressed: onTap, child: CommonText(text: title));

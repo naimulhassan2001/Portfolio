@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../utils/app_colors.dart';
+import 'package:portfolio/utils/app_colors.dart';
 
 class OtherHelper {
   static RegExp emailRegexp = RegExp(
@@ -9,7 +9,7 @@ class OtherHelper {
 
   static String? validator(value) {
     if (value.isEmpty) {
-      return "This field is required";
+      return 'This field is required';
     } else {
       return null;
     }
@@ -17,16 +17,16 @@ class OtherHelper {
 
   static String? emailValidator(value) {
     if (value!.isEmpty) {
-      return "This field is required".tr;
+      return 'This field is required'.tr;
     } else if (!emailRegexp.hasMatch(value)) {
-      return "Enter valid email".tr;
+      return 'Enter valid email'.tr;
     } else {
       return null;
     }
   }
 
   static Future<String> openDatePicker(TextEditingController controller) async {
-    final DateTime? picked = await showDatePicker(
+      DateTime? picked = await showDatePicker(
       builder:
           (context, child) => Theme(
             data: Theme.of(context).copyWith(
@@ -40,15 +40,15 @@ class OtherHelper {
       lastDate: DateTime(2101),
     );
     if (picked != null) {
-      controller.text = "${picked.year}/${picked.month}/${picked.day}";
+      controller.text = '${picked.year}/${picked.month}/${picked.day}';
       return picked.toIso8601String();
     }
 
-    return "";
+    return '';
   }
 
   static Future<String> openTimePicker(TextEditingController controller) async {
-    final TimeOfDay? picked = await showTimePicker(
+     TimeOfDay? picked = await showTimePicker(
       context: Get.context!,
       initialTime: TimeOfDay.now(),
     );

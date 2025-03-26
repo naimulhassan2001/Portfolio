@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../utils/app_colors.dart';
-import '../text/common_text.dart';
+import 'package:portfolio/utils/app_colors.dart';
+import 'package:portfolio/view/component/text/common_text.dart';
 
 class CommonTextField extends StatelessWidget {
   const CommonTextField({
@@ -60,8 +60,7 @@ class CommonTextField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
 
   @override
-  Widget build(BuildContext context) {
-    return TextFormField(
+  Widget build(BuildContext context) => TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: keyboardType,
       validator: validator,
@@ -78,7 +77,7 @@ class CommonTextField extends StatelessWidget {
         filled: true,
         prefixIcon: prefixIcon,
         fillColor: fillColor,
-        counterText: "",
+        counterText: '',
         contentPadding: EdgeInsets.symmetric(
           horizontal: paddingHorizontal,
           vertical: paddingVertical,
@@ -107,9 +106,8 @@ class CommonTextField extends StatelessWidget {
         labelText: labelText,
         hintStyle: GoogleFonts.ebGaramond(fontSize: 18, color: hintTextColor),
         labelStyle: GoogleFonts.ebGaramond(fontSize: 18, color: labelTextColor),
-        prefix: CommonText(text: prefixText ?? "", fontWeight: FontWeight.w400),
+        prefix: CommonText(text: prefixText ?? ''),
         suffixIcon: suffixIcon,
       ),
     );
-  }
 }

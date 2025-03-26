@@ -2,27 +2,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
-import 'faq_item.dart';
+import 'package:portfolio/view/screen/contact/widgets/faq_item.dart';
 
 Widget faqSection() {
   List faqs = [
     {
-      "question": AppString.whatTypesOfServicesDoYourOffer,
-      "answer": AppString.testText,
+      'question': AppString.whatTypesOfServicesDoYourOffer,
+      'answer': AppString.testText,
     },
     {
-      "question": AppString.whatDoYouNeedFromMeToStartProject,
-      "answer": AppString.testText,
+      'question': AppString.whatDoYouNeedFromMeToStartProject,
+      'answer': AppString.testText,
     },
     {
-      "question": AppString.howLongDoesTtTakeToCompleteProject,
-      "answer": AppString.testText,
+      'question': AppString.howLongDoesTtTakeToCompleteProject,
+      'answer': AppString.testText,
     },
     {
-      "question": AppString.whatIsTheCostOfYourServices,
-      "answer": AppString.testText,
+      'question': AppString.whatIsTheCostOfYourServices,
+      'answer': AppString.testText,
     },
-    {"question": AppString.doYouOfferRevisions, "answer": AppString.testText},
+    {'question': AppString.doYouOfferRevisions, 'answer': AppString.testText},
   ];
 
   return Column(
