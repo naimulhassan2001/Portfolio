@@ -4,12 +4,14 @@ import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
+import '../../../helpers/resize.dart';
+
 Widget about() => Column(
     children: [
       20.height,
       CommonText(
         text: AppString.aboutMe,
-        fontSize: 64,
+        fontSize: Resize.featureTitleTextSize(),
         color: AppColors.primaryColor,
         fontWeight: FontWeight.bold,
       ).start,

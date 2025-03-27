@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/my_extension.dart';
+import 'package:portfolio/helpers/resize.dart';
 import 'package:portfolio/utils/app_images.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/view/component/image/common_image.dart';
@@ -8,73 +9,73 @@ import 'package:portfolio/view/component/text/common_text.dart';
 import 'package:portfolio/utils/app_colors.dart';
 
 Widget projectItem() => Stack(
-    children: [
-      Container(
-        margin: EdgeInsets.all(10),
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: AppColors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CommonImage(
-                imageSrc: AppImages.russend,
-                size: 200,
-                borderRadius: 10,
-                imageType: ImageType.png,
+      children: [
+        Container(
+          margin: EdgeInsets.all(10),
+          padding: EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: AppColors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: const Offset(0, 3),
               ),
-              CommonText(
-                text: '${AppString.appName}${AppString.russend}',
-                color: AppColors.black,
-                fontSize: 18,
-              ).start,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  InkWell(
-                      onTap: () {},
-                      child: CommonText(
-                        text: AppString.playStore,
-                        color: AppColors.blue,
-                        fontSize: 16,
-                      )),
-                  InkWell(
-                      onTap: () {},
-                      child: CommonText(
-                        text: AppString.appStore,
-                        color: AppColors.blue,
-                        fontSize: 16,
-                      )),
-                ],
-              )
             ],
           ),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CommonImage(
+                  imageSrc: AppImages.russend,
+                  size: Resize.projectLogoSize(),
+                  borderRadius: 10,
+                  imageType: ImageType.png,
+                ),
+                CommonText(
+                  text: '${AppString.appName}${AppString.russend}',
+                  color: AppColors.black,
+                  fontSize: Resize.projectNameTextSize(),
+                ).start,
+                Wrap(
+                  spacing: 8,
+                  children: [
+                    InkWell(
+                        onTap: () {},
+                        child: CommonText(
+                          text: AppString.playStore,
+                          color: AppColors.blue,
+                          fontSize: Resize.projectStoreButtonSize(),
+                        )),
+                    InkWell(
+                        onTap: () {},
+                        child: CommonText(
+                          text: AppString.appStore,
+                          color: AppColors.blue,
+                          fontSize: Resize.projectStoreButtonSize(),
+                        )),
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
-      ),
-      Container(
-        margin: EdgeInsets.only(left: 16, top: 16),
-        padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-        decoration: BoxDecoration(
-            color: AppColors.black.withOpacity(0.6),
-            borderRadius: BorderRadius.circular(6)),
-        child: CommonText(
-          text: 'Client Project',
-          fontSize: 12,
-        ),
-      )
-    ],
-  );
+        Container(
+          margin: EdgeInsets.only(left: 16, top: 16),
+          padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+          decoration: BoxDecoration(
+              color: AppColors.black.withOpacity(0.6),
+              borderRadius: BorderRadius.circular(6)),
+          child: CommonText(
+            text: 'Client Project',
+            fontSize: Resize.projectClientProjectTextSize(),
+          ),
+        )
+      ],
+    );
 
 // import 'package:flutter/material.dart';
 // import 'package:portfolio/helpers/my_extension.dart';

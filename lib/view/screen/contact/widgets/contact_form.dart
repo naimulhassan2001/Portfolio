@@ -6,12 +6,14 @@ import 'package:portfolio/view/component/button/common_button.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 import 'package:portfolio/view/component/text_field/common_text_field.dart';
 
+import '../../../../helpers/resize.dart';
+
 Widget contactForm() => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       CommonText(
         text: AppString.contact,
-        fontSize: 64,
+        fontSize: Resize.featureTitleTextSize(),
         color: AppColors.primaryColor,
         bottom: 20,
         fontWeight: FontWeight.bold,
