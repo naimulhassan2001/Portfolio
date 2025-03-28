@@ -17,7 +17,7 @@ class CommonText extends StatelessWidget {
     this.fontWeight = FontWeight.w400,
     this.color = AppColors.white,
     required this.text,
-    this.style = false,
+    this.style,
     this.overflow = TextOverflow.ellipsis,
   });
 
@@ -32,33 +32,27 @@ class CommonText extends StatelessWidget {
   final TextAlign textAlign;
   final int maxLines;
   final TextOverflow overflow;
-  final bool style;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) => Padding(
-      padding: EdgeInsets.only(
-        left: left,
-        right: right,
-        top: top,
-        bottom: bottom,
-      ),
-      child: Text(
-        textAlign: textAlign,
-        text,
-        maxLines: maxLines,
-        overflow: overflow,
-        style:
-            style == true
-                ? GoogleFonts.poppins(
-                  fontSize: fontSize,
-                  fontWeight: fontWeight,
-                  color: color,
-                )
-                : GoogleFonts.ebGaramond(
-                  fontSize: fontSize,
-                  fontWeight: fontWeight,
-                  color: color,
-                ),
-      ),
-    );
+        padding: EdgeInsets.only(
+          left: left,
+          right: right,
+          top: top,
+          bottom: bottom,
+        ),
+        child: Text(
+          textAlign: textAlign,
+          text,
+          maxLines: maxLines,
+          overflow: overflow,
+          style: style ??
+              GoogleFonts.ebGaramond(
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                color: color,
+              ),
+        ),
+      );
 }

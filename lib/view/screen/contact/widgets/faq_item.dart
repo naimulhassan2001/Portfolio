@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -47,36 +48,40 @@ class _FaqItemState extends State<FaqItem> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) => GestureDetector(
-      onTap: _toggleExpansion,
-      child: AnimatedContainer(
-        width: Get.width > 700 ? 700 : Get.width,
-        padding: const EdgeInsets.all(16),
-        margin: const EdgeInsets.only(bottom: 16),
-        decoration: BoxDecoration(
-          color: const Color(0xff1C1C1C),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        duration: const Duration(seconds: 1),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CommonText(
-                    text: widget.item['question'],
-                    fontSize: 24,
-                    style: true,
-                    bottom: 10,
-                  ),
-                  AnimatedSwitcher(
-                    duration: Duration(milliseconds: 500),
-                    transitionBuilder: (
-                      Widget child,
-                      Animation<double> animation,
-                    ) => FadeTransition(
+        onTap: _toggleExpansion,
+        child: AnimatedContainer(
+          width: Get.width > 700 ? 700 : Get.width,
+          padding: const EdgeInsets.all(16),
+          margin: const EdgeInsets.only(bottom: 16),
+          decoration: BoxDecoration(
+            color: const Color(0xff1C1C1C),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          duration: const Duration(seconds: 1),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CommonText(
+                      text: widget.item['question'],
+                      style: GoogleFonts.poppins(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.white,
+                      ),
+                      bottom: 10,
+                    ),
+                    AnimatedSwitcher(
+                      duration: Duration(milliseconds: 500),
+                      transitionBuilder: (
+                        Widget child,
+                        Animation<double> animation,
+                      ) =>
+                          FadeTransition(
                         opacity: animation,
                         child: SizeTransition(
                           sizeFactor: animation,
@@ -84,28 +89,31 @@ class _FaqItemState extends State<FaqItem> with SingleTickerProviderStateMixin {
                           child: child,
                         ),
                       ),
-                    child:
-                        isExpanded
-                            ? CommonText(
+                      child: isExpanded
+                          ? CommonText(
                               key: ValueKey<bool>(isExpanded),
                               text: widget.item['answer'],
                               maxLines: 10,
-                              style: true,
+                              style: GoogleFonts.poppins(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.white,
+                              ),
                             )
-                            : SizedBox.shrink(),
-                  ),
-                ],
+                          : SizedBox.shrink(),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            RotationTransition(
-              turns: _iconAnimation,
-              child: Icon(
-                isExpanded ? FontAwesomeIcons.minus : FontAwesomeIcons.plus,
-                color: AppColors.white,
+              RotationTransition(
+                turns: _iconAnimation,
+                child: Icon(
+                  isExpanded ? FontAwesomeIcons.minus : FontAwesomeIcons.plus,
+                  color: AppColors.white,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    );
+      );
 }

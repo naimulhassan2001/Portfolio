@@ -10,21 +10,21 @@ class Resize {
 
   static double homeMyNameTextSize() {
     if (Responsive.isMobile()) {
-      return 30;
+      return 20;
     } else if (Responsive.isTablet()) {
-      return 40;
+      return 30;
     } else {
-      return 50;
+      return 40;
     }
   }
 
   static double homeMyNameAboutSize() {
     if (Responsive.isMobile()) {
-      return 20;
+      return 16;
     } else if (Responsive.isTablet()) {
-      return 28;
+      return 20;
     } else {
-      return 34;
+      return 24;
     }
   }
 
@@ -96,7 +96,6 @@ class Resize {
     }
     return 60;
   }
-
 
   static double featureTitleTextSize() {
     if (Responsive.isMobile()) {

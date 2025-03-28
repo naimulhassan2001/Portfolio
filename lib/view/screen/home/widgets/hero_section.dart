@@ -10,7 +10,6 @@ import 'package:portfolio/view/component/button/common_button.dart';
 import 'package:portfolio/view/component/image/common_image.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
-
 Widget heroSection() => Row(
       children: [
         Expanded(
@@ -19,7 +18,7 @@ Widget heroSection() => Row(
               if (Responsive.isMobile()) myPicture(),
               if (Responsive.isMobile()) 20.height,
               CommonText(
-                text: AppString.myName,
+                text: '${AppString.greeting} ${AppString.myName}',
                 fontSize: Resize.homeMyNameTextSize(),
                 fontWeight: FontWeight.bold,
               ),
@@ -27,6 +26,7 @@ Widget heroSection() => Row(
                 text: AppString.aboutMeDetails,
                 fontSize: Resize.homeMyNameAboutSize(),
                 maxLines: 30,
+                fontWeight: FontWeight.w100,
               ),
               20.height,
               // SocialIcons(),

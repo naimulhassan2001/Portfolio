@@ -18,7 +18,6 @@ Widget header(GlobalKey<ScaffoldState> scaffoldKey) => Column(
             if (Responsive.isMobile())
               IconButton(
                 onPressed: () {
-
                   if (!scaffoldKey.currentState!.isEndDrawerOpen) {
                     scaffoldKey.currentState!.openEndDrawer();
                     return;
@@ -63,10 +62,30 @@ Widget header(GlobalKey<ScaffoldState> scaffoldKey) => Column(
             width: double.infinity,
             margin: EdgeInsets.only(top: 10),
             decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30))),
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFF00C9FF).withOpacity(0.5),
+                  Color(0xFF00C9FF),
+                  Color(0xFF00C9FF).withOpacity(0.8),
+                  Color(0xFF00C9FF),
+                  Color(0xFF00C9FF).withOpacity(0.8),
+                  Color(0xFF00C9FF),
+                  Color(0xFF00C9FF).withOpacity(0.8),
+                  Color(0xFF00C9FF),
+                  Color(0xFF00C9FF).withOpacity(0.8),
+                  Color(0xFF00C9FF),
+                  Color(0xFF00C9FF).withOpacity(0.8),
+                  Color(0xFF00C9FF),
+                  Color(0xFF00C9FF).withOpacity(0.8),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.topRight,
+              ),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
+            ),
           )
       ],
     );

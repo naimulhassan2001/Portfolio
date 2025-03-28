@@ -1,13 +1,15 @@
 class AppString {
-  static const String mdNaimulHassan = 'MD Naimul Hassan';
+  static const String myName = 'MD Naim Mia';
+  static const String knownName = 'MD Naimul Hassan';
+
   static const String test = 'test';
-  static const String myName = 'HI, I AM MD Naimul Hassan';
+  static const String greeting = 'Hi, I am ';
   static const String aboutMeDetails =
-      'You are a passionate Flutter developer skilled in building cross-platform mobile and web applications with a focus on performance and user experience.';
+      'I am a passionate Flutter developer who loves turning ideas into high-performing, visually stunning mobile apps. With expertise in Flutter and Dart, I build smooth, responsive, and scalable applications that deliver a seamless user experience. From UI design to API integration and full-cycle app development, I focus on writing clean, efficient code to bring creative visions to life. My goal is to craft fast, functional, and feature-rich apps that make an impact.';
   static const String contactMe = 'Contact Me';
   static const String aboutMe = 'About Me';
   static const String myDetails =
-      "I'm a Flutter developer with a good understanding of the Flutter framework, I have experience in UI design, API integration, clean code writing and knowledge of solid principles and clean architecture. I have completed many projects that prove my ability to provide creative and high-quality solutions and finish them in an almost complete way with a great user experience without any problems facing users";
+      'I am a passionate Flutter developer who enjoys turning ideas into high-performing, visually appealing mobile apps. With skills in Flutter and Dart, I create smooth, responsive, and scalable applications that offer a great user experience. From UI design to API integration and full-cycle app development, I focus on writing clean, efficient code to bring ideas to life. With an eye for detail and a problem-solving approach, I make sure every app I develop is optimized for performance, security, and user engagement. Whether it’s creating custom animations, connecting third-party services, or handling state management, I aim to push the limits of mobile development. My goal is to build fast, functional, and feature-packed apps that not only meet expectations but go beyond them—creating digital experiences that truly stand out. ';
   static const String myPortfolio = 'My Portfolio';
   static const String home = 'Home';
   static const String project = 'Projects';

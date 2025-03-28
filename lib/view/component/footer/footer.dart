@@ -45,7 +45,7 @@ Widget designAndDevelopment() {
       ),
     ),
     TextSpan(
-      text: AppString.mdNaimulHassan,
+      text: AppString.knownName,
       recognizer: TapGestureRecognizer()..onTap = () {},
       style: GoogleFonts.ebGaramond(
         color: AppColors.blue,
