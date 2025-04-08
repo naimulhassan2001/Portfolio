@@ -20,9 +20,9 @@ class Resize {
 
   static double homeMyNameAboutSize() {
     if (Responsive.isMobile()) {
-      return 16;
-    } else if (Responsive.isTablet()) {
       return 20;
+    } else if (Responsive.isTablet()) {
+      return 22;
     } else {
       return 24;
     }
@@ -65,7 +65,7 @@ class Resize {
     if (Responsive.isMobile()) {
       return 12;
     } else if (Responsive.isTablet()) {
-      return 16;
+      return 14;
     }
     return 18;
   }
@@ -74,7 +74,7 @@ class Resize {
     if (Responsive.isMobile()) {
       return 12;
     } else if (Responsive.isTablet()) {
-      return 16;
+      return 14;
     }
     return 18;
   }
@@ -104,5 +104,14 @@ class Resize {
       return 44;
     }
     return 64;
+  }
+
+  static double contactWithMe() {
+    if (Responsive.isMobile()) {
+      return 22;
+    } else if (Responsive.isTablet()) {
+      return 34;
+    }
+    return 46;
   }
 }

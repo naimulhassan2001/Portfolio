@@ -1,23 +1,13 @@
 class ProjectModel {
-
   ProjectModel({
     required this.name,
-    required this.shortDescription,
-    required this.images,
-    required this.technology,
-    required this.features,
-    required this.completedYear,
-    required this.role,
+    required this.logo,
     this.playStoreUrl = '',
     this.appStoreUrl = '',
   });
+
   final String name;
-  final String shortDescription;
-  final List images;
-  final List technology;
-  final List features;
-  final String completedYear;
-  final List role;
+  final String logo;
   final String playStoreUrl;
   final String appStoreUrl;
 }

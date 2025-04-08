@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/my_extension.dart';
+import 'package:portfolio/helpers/other_helper.dart';
 import 'package:portfolio/helpers/resize.dart';
-import 'package:portfolio/utils/app_images.dart';
+import 'package:portfolio/model/project_model.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/view/component/image/common_image.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
 import 'package:portfolio/utils/app_colors.dart';
 
-Widget projectItem() => Stack(
+Widget projectItem(ProjectModel item) => Stack(
       children: [
         Container(
           margin: EdgeInsets.all(10),
@@ -30,33 +31,35 @@ Widget projectItem() => Stack(
               mainAxisSize: MainAxisSize.min,
               children: [
                 CommonImage(
-                  imageSrc: AppImages.russend,
+                  imageSrc: item.logo,
                   size: Resize.projectLogoSize(),
                   borderRadius: 10,
                   imageType: ImageType.png,
                 ),
                 CommonText(
-                  text: '${AppString.appName}${AppString.russend}',
+                  text: '${AppString.appName}${item.name}',
                   color: AppColors.black,
                   fontSize: Resize.projectNameTextSize(),
                 ).start,
                 Wrap(
                   spacing: 8,
                   children: [
-                    InkWell(
-                        onTap: () {},
-                        child: CommonText(
-                          text: AppString.playStore,
-                          color: AppColors.blue,
-                          fontSize: Resize.projectStoreButtonSize(),
-                        )),
-                    InkWell(
-                        onTap: () {},
-                        child: CommonText(
-                          text: AppString.appStore,
-                          color: AppColors.blue,
-                          fontSize: Resize.projectStoreButtonSize(),
-                        )),
+                    if (item.playStoreUrl.isNotEmpty)
+                      InkWell(
+                          onTap: () => OtherHelper.openUrl(item.playStoreUrl),
+                          child: CommonText(
+                            text: AppString.playStore,
+                            color: AppColors.blue,
+                            fontSize: Resize.projectStoreButtonSize(),
+                          )),
+                    if (item.appStoreUrl.isNotEmpty)
+                      InkWell(
+                          onTap: () => OtherHelper.openUrl(item.appStoreUrl),
+                          child: CommonText(
+                            text: AppString.appStore,
+                            color: AppColors.blue,
+                            fontSize: Resize.projectStoreButtonSize(),
+                          )),
                   ],
                 )
               ],

@@ -9,7 +9,7 @@ class SocialIcons extends StatefulWidget {
 }
 
 class SocialIconsState extends State<SocialIcons> {
-  final double btnSize = 72.0;
+  final double btnSize = 48.0;
 
   final Map<String, Color> sites = {
     'facebook': const Color(0xFF3B5998),

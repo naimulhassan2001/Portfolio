@@ -9,11 +9,11 @@ import 'package:portfolio/view/component/footer/footer.dart';
 import 'package:portfolio/view/component/header/header.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 import 'package:portfolio/view/screen/about/about_screen.dart';
-import 'package:portfolio/view/screen/contact/widgets/contact_form.dart';
 import 'package:portfolio/view/screen/project/project_screen.dart';
 import 'package:portfolio/view/screen/skills/skillsscreen.dart';
 import 'package:portfolio/view/screen/home/widgets/hero_section.dart';
 
+import '../contact/contact_screen.dart';
 import 'widgets/end_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
               ).start,
               Skills(),
               about(),
-              contactForm(),
+              ContactScreen(),
               footer()
             ],
           ),

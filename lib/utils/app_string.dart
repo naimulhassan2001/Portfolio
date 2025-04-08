@@ -16,6 +16,8 @@ class AppString {
   static const String about = 'About';
   static const String skills = 'Skills';
   static const String contact = 'Contact';
+  static const String contactWithMe = 'Contact With Me';
+  static const String contactDetails = 'For any service and work you can contact with me by send an email or by our social media accounts.';
   static const String name = 'Name';
   static const String nameHint = 'e.g. John Doe';
   static const String email = 'E-mail';
@@ -24,7 +26,7 @@ class AppString {
   static const String phoneNumberHint = '(123) - 456 - 789';
   static const String message = 'Message';
   static const String messageHint = 'Write Your Message Here';
-  static const String sendMessage = 'Send Message';
+  static const String sendMessage = 'Send';
   static const String faq = 'FAQ';
   static const String whatTypesOfServicesDoYourOffer =
       'What types of services do you offer?';

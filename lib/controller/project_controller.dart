@@ -6,32 +6,23 @@ import 'package:portfolio/utils/app_images.dart';
 class ProjectController extends GetxController {
   List<ProjectModel> projects = [
     ProjectModel(
-        name: 'Russend',
-        shortDescription:
-            'Russend is a money transfer app designed to facilitate easy and secure financial transactions from Russia to Central African countries.',
-        images: [
-          AppImages.img,
-          AppImages.img,
-          AppImages.img,
-          AppImages.img,
-        ],
-        technology: [
-          'Socket.IO',
-          'Socket.IO',
-          'Socket.IO',
-          'Socket.IO',
-        ],
-        features: [
-          '• Integrated to support mobile money transfers via services like Orange Money, and MTN',
-          '• Integrated to support mobile money transfers via services like Orange Money, and MTN',
-          '• Integrated to support mobile money transfers via services like Orange Money, and MTN',
-          '• Integrated to support mobile money transfers via services like Orange Money, and MTN',
-        ],
-        completedYear: '2024',
-        role: [
-          'Backend Development',
-          'API Integration',
-          'Payment Gateway Integration'
-        ])
+      name: 'Russend',
+      logo: AppImages.russend,
+      appStoreUrl: 'https://apps.apple.com/us/app/russend/id6503144297',
+      playStoreUrl:
+          'https://play.google.com/store/apps/details?id=com.russendsolution.russend',
+    ),
+    ProjectModel(
+      name: 'Untied',
+      logo: AppImages.united,
+      playStoreUrl:
+          'https://play.google.com/store/apps/details?id=com.united.bycadz',
+      appStoreUrl: 'https://apps.apple.com/us/app/united-app/id6624303228',
+    ),
+    ProjectModel(
+      name: 'Russend',
+      logo: AppImages.russend,
+      appStoreUrl: 'https://apps.apple.com/us/app/russend/id6503144297',
+    ),
   ];
 }

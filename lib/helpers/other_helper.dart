@@ -1,6 +1,9 @@
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/utils/app_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OtherHelper {
   static RegExp emailRegexp = RegExp(
@@ -26,14 +29,13 @@ class OtherHelper {
   }
 
   static Future<String> openDatePicker(TextEditingController controller) async {
-      DateTime? picked = await showDatePicker(
-      builder:
-          (context, child) => Theme(
-            data: Theme.of(context).copyWith(
-              colorScheme: const ColorScheme.light(primary: AppColors.white),
-            ),
-            child: child!,
-          ),
+    DateTime? picked = await showDatePicker(
+      builder: (context, child) => Theme(
+        data: Theme.of(context).copyWith(
+          colorScheme: const ColorScheme.light(primary: AppColors.white),
+        ),
+        child: child!,
+      ),
       context: Get.context!,
       initialDate: DateTime.now(),
       firstDate: DateTime(1900),
@@ -48,7 +50,7 @@ class OtherHelper {
   }
 
   static Future<String> openTimePicker(TextEditingController controller) async {
-     TimeOfDay? picked = await showTimePicker(
+    TimeOfDay? picked = await showTimePicker(
       context: Get.context!,
       initialTime: TimeOfDay.now(),
     );
@@ -59,5 +61,14 @@ class OtherHelper {
       return "${picked.hour}:${picked.minute < 10 ? "0${picked.minute}" : picked.minute}";
     }
     return '';
+  }
+
+  static Future<void> openUrl(String url) async {
+    Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      if (kDebugMode) {
+        print('Could not launch $url');
+      }
+    }
   }
 }

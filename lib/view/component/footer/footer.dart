@@ -40,7 +40,7 @@ Widget designAndDevelopment() {
       text: AppString.designAndDevelopment,
       style: GoogleFonts.ebGaramond(
         color: AppColors.blue,
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       ),
     ),
@@ -49,7 +49,7 @@ Widget designAndDevelopment() {
       recognizer: TapGestureRecognizer()..onTap = () {},
       style: GoogleFonts.ebGaramond(
         color: AppColors.blue,
-        fontSize: 16,
+        fontSize: 14,
         decoration: TextDecoration.underline,
         decorationColor: AppColors.primaryColor,
         fontWeight: FontWeight.w400,
