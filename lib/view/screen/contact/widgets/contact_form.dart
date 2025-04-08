@@ -5,7 +5,6 @@ import 'package:portfolio/view/component/button/common_button.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 import 'package:portfolio/view/component/text_field/common_text_field.dart';
 
-
 Widget contactForm() => ConstrainedBox(
       constraints: BoxConstraints(
         maxWidth: 400,
