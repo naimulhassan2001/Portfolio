@@ -3,7 +3,8 @@ name: Publish Website to Web Hosting
 on:
   push:
     branches:
-      - main  # Make sure to include a dash here for the branch name
+      - main  # Ensure this is properly indented for correct syntax
+      - master
 
 jobs:
   deploy:
