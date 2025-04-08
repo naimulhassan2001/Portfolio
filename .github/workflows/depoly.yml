@@ -1,33 +1,36 @@
-name: Publish Website to Web Hosting
+name: Build and Deploy Flutter Web on Cpanel
 
 on:
   push:
     branches:
       - main
       - master
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  deploy:
-    name: Deploy website every commit
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Flutter environment
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.0.0'  # You can specify your preferred Flutter version here
+          flutter-version: '3.2.7'  # Adjust according to your Flutter version
 
-      - name: Get latest code
-        uses: actions/checkout@v2
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: flutter pub get
 
-      - name: Install dependencies
-        run: |
-          flutter pub get  # Install necessary Flutter dependencies
-
+      # Step 4: Build Flutter web app
       - name: Build Flutter web app
-        run: |
-          flutter build web  # Build the Flutter web app
+        run: flutter build web
 
+      # Step 5: Deploy to FTP server
       - name: FTP Deploy Action
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
