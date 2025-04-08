@@ -3,7 +3,7 @@ name: Publish Website to Web Hosting
 on:
   push:
     branches:
-      - main  # Ensure this is properly indented for correct syntax
+      - main
       - master
 
 jobs:
@@ -12,8 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.0.0'  # You can specify your preferred Flutter version here
+
       - name: Get latest code
-        uses: actions/checkout@v2  # Correct syntax for using checkout action
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          flutter pub get  # Install necessary Flutter dependencies
+
+      - name: Build Flutter web app
+        run: |
+          flutter build web  # Build the Flutter web app
 
       - name: FTP Deploy Action
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
@@ -23,4 +36,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps  # Ensure the protocol is 'ftps' for secure transfer
           port: 21
-          local-dir: './'  # Path to the local directory to upload, '.' refers to the root of your repo
+          local-dir: './build/web'  # Path to the Flutter web build output
