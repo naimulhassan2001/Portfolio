@@ -1,0 +1,25 @@
+name: Publish Website to Web Hosting
+
+on:
+  push:
+    branches:
+      - main  # Make sure to include a dash here for the branch name
+
+jobs:
+  deploy:
+    name: Deploy website every commit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v2  # Correct syntax for using checkout action
+
+      - name: FTP Deploy Action
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}  # Use secrets for sensitive info
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps  # Ensure the protocol is 'ftps' for secure transfer
+          port: 21
+          local-dir: './'  # Path to the local directory to upload, '.' refers to the root of your repo
