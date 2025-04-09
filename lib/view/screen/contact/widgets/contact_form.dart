@@ -28,7 +28,7 @@ Widget contactForm() {
         children: [
           FadeIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 14000),
+            delay: Duration(milliseconds: 17000),
             child: CommonText(
               text: AppString.name,
               bottom: 8,
@@ -36,7 +36,7 @@ Widget contactForm() {
           ),
           FadeIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 14200),
+            delay: Duration(milliseconds: 17200),
             child: CommonTextField(
               hintText: AppString.nameHint,
               keyboardType: TextInputType.name,
@@ -46,11 +46,11 @@ Widget contactForm() {
           ),
           FadeIn(
               duration: Duration(seconds: 3),
-              delay: Duration(milliseconds: 14400),
+              delay: Duration(milliseconds: 17400),
               child: CommonText(text: AppString.email, bottom: 8, top: 12)),
           FadeIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 14600),
+            delay: Duration(milliseconds: 17600),
             child: CommonTextField(
               hintText: AppString.emailHint,
               keyboardType: TextInputType.emailAddress,
@@ -60,12 +60,12 @@ Widget contactForm() {
           ),
           FadeIn(
               duration: Duration(seconds: 3),
-              delay: Duration(milliseconds: 14800),
+              delay: Duration(milliseconds: 17800),
               child: CommonText(
                   text: AppString.phoneNumber, bottom: 8, top: 12)),
           FadeIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 15000),
+            delay: Duration(milliseconds: 18000),
             child: CommonTextField(
               hintText: AppString.phoneNumberHint,
               keyboardType: TextInputType.phone,
@@ -75,11 +75,11 @@ Widget contactForm() {
           ),
           FadeIn(
               duration: Duration(seconds: 3),
-              delay: Duration(milliseconds: 15200),
+              delay: Duration(milliseconds: 18200),
               child: CommonText(text: AppString.message, bottom: 8, top: 12)),
           FadeIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 15400),
+            delay: Duration(milliseconds: 18400),
             child: CommonTextField(
               hintText: AppString.messageHint,
               maxLines: 4,
@@ -90,7 +90,7 @@ Widget contactForm() {
           24.height,
           ElasticIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 15600),
+            delay: Duration(milliseconds: 18600),
             child: CommonButton(
               titleText: AppString.sendMessage,
               onTap: () {
