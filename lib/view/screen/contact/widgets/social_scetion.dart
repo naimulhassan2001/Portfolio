@@ -1,5 +1,6 @@
 
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 
@@ -14,20 +15,28 @@ Widget socialScetion() {
     crossAxisAlignment: CrossAxisAlignment.start,
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
-      CommonText(
-        text: AppString.contactWithMe,
-        fontSize: Resize.contactWithMe(),
-        color: AppColors.primaryColor,
-        fontWeight: FontWeight.bold,
-      ).start,
-      CommonText(
-        text: AppString.contactDetails,
-        fontSize: Resize.homeMyNameAboutSize(),
-        color: AppColors.white,
-        bottom: 16,
-        maxLines: 100,
-        fontWeight: FontWeight.w400,
-      ).start,
+      FadeIn(
+        delay: Duration(milliseconds: 15500),
+        duration: Duration(seconds: 3),
+        child: CommonText(
+          text: AppString.contactWithMe,
+          fontSize: Resize.contactWithMe(),
+          color: AppColors.primaryColor,
+          fontWeight: FontWeight.bold,
+        ).start,
+      ),
+      FadeIn(
+        delay: Duration(milliseconds: 16000),
+        duration: Duration(seconds: 3),
+        child: CommonText(
+          text: AppString.contactDetails,
+          fontSize: Resize.homeMyNameAboutSize(),
+          color: AppColors.white,
+          bottom: 16,
+          maxLines: 100,
+          fontWeight: FontWeight.w400,
+        ).start,
+      ),
       SocialIcons(),
     ],
   ) ;

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/view/component/text/common_text.dart';
 
@@ -59,11 +60,15 @@ class Skills extends StatelessWidget {
           itemCount: timelineItems.length,
           itemBuilder: (context, index) {
             return Center(
-              child: TimelineCard(
-                item: timelineItems[index],
-                isRight: index.isEven && !isMobile, // Alternate only for web
-                isLast: index == timelineItems.length - 1,
-                isMobile: isMobile,
+              child: ElasticIn(
+                delay: Duration(milliseconds: 10500+ (500*index)),
+                duration: Duration(seconds: 3),
+                child: TimelineCard(
+                  item: timelineItems[index],
+                  isRight: index.isEven && !isMobile, // Alternate only for web
+                  isLast: index == timelineItems.length - 1,
+                  isMobile: isMobile,
+                ),
               ),
             );
           },

@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -64,6 +63,8 @@ class OtherHelper {
   }
 
   static Future<void> openUrl(String url) async {
+    url = url.trim();
+    if (url.isEmpty) return;
     Uri uri = Uri.parse(url);
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
       if (kDebugMode) {

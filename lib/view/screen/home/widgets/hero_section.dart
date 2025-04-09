@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/my_extension.dart';
@@ -17,35 +18,55 @@ Widget heroSection() => Row(
             children: [
               if (Responsive.isMobile()) myPicture(),
               if (Responsive.isMobile()) 20.height,
-              CommonText(
-                text: '${AppString.greeting} ${AppString.myName}',
-                fontSize: Resize.homeMyNameTextSize(),
-                fontWeight: FontWeight.bold,
+              ElasticIn(
+                delay: Duration(milliseconds: 3000),
+                duration: Duration(seconds: 10),
+                child: CommonText(
+                  text: '${AppString.greeting} ${AppString.myName}',
+                  fontSize: Resize.homeMyNameTextSize(),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              CommonText(
-                text: AppString.aboutMeDetails,
-                fontSize: Resize.homeMyNameAboutSize(),
-                maxLines: 30,
-                fontWeight: FontWeight.w100,
+              FadeInUp(
+                delay: Duration(milliseconds: 3500),
+                duration: Duration(seconds: 3),
+                child: CommonText(
+                  text: AppString.aboutMeDetails,
+                  fontSize: Resize.homeMyNameAboutSize(),
+                  maxLines: 30,
+                  fontWeight: FontWeight.w100,
+                ),
               ),
               20.height,
               // SocialIcons(),
               // 40.height,
-              Wrap(
-                spacing: Resize.aboutAndContactButtonSpace(),
-                runSpacing: 16.0,
-                children: [
-                  CommonButton(
-                    titleText: AppString.contactMe,
-                    buttonRadius: 30,
-                  ),
-                  CommonButton(
-                    titleText: AppString.aboutMe,
-                    borderColor: AppColors.white,
-                    buttonColor: AppColors.transparent,
-                    buttonRadius: 30,
-                  ),
-                ],
+              FadeIn(
+                delay: Duration(milliseconds: 5000),
+                duration: Duration(seconds: 5),
+                child: Wrap(
+                  spacing: Resize.aboutAndContactButtonSpace(),
+                  runSpacing: 16.0,
+                  children: [
+                    HeartBeat(
+                      delay: Duration(milliseconds: 6500),
+                      duration: Duration(seconds: 3),
+                      child: CommonButton(
+                        titleText: AppString.contactMe,
+                        buttonRadius: 30,
+                      ),
+                    ),
+                    HeartBeat(
+                      delay: Duration(milliseconds: 7500),
+                      duration: Duration(seconds: 3),
+                      child: CommonButton(
+                        titleText: AppString.aboutMe,
+                        borderColor: AppColors.white,
+                        buttonColor: AppColors.transparent,
+                        buttonRadius: 30,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -55,17 +76,21 @@ Widget heroSection() => Row(
     );
 
 myPicture() {
-  return Container(
-    decoration: BoxDecoration(
-      color: AppColors.white.withOpacity(0.9),
-      shape: BoxShape.circle,
-      border: Border.all(color: AppColors.white, width: 3),
-    ),
-    child: CommonImage(
-      imageSrc: AppImages.naimul,
-      size: Resize.homeImageSize(),
-      imageType: ImageType.png,
-      borderRadius: 50000,
+  return ElasticIn(
+    duration: Duration(milliseconds: 2000),
+    delay: Duration(milliseconds: 1000),
+    child: Container(
+      decoration: BoxDecoration(
+        color: AppColors.white.withOpacity(0.9),
+        shape: BoxShape.circle,
+        border: Border.all(color: AppColors.white, width: 3),
+      ),
+      child: CommonImage(
+        imageSrc: AppImages.naimul,
+        size: Resize.homeImageSize(),
+        imageType: ImageType.png,
+        borderRadius: 50000,
+      ),
     ),
   );
 }

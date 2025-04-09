@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 import 'package:portfolio/helpers/resize.dart';
@@ -12,43 +13,45 @@ import 'package:portfolio/view/screen/about/about_screen.dart';
 import 'package:portfolio/view/screen/project/project_screen.dart';
 import 'package:portfolio/view/screen/skills/skillsscreen.dart';
 import 'package:portfolio/view/screen/home/widgets/hero_section.dart';
-
 import '../contact/contact_screen.dart';
-import 'widgets/end_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
-
-  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     Responsive.context = context;
     return Scaffold(
-      key: scaffoldKey,
-      endDrawer: endDrawer(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              header(scaffoldKey),
+              header(),
               20.height,
               heroSection(),
-              CommonText(
-                text: AppString.project,
-                fontSize: Resize.featureTitleTextSize(),
-                bottom: 20,
-                color: AppColors.primaryColor,
-                fontWeight: FontWeight.bold,
+              HeartBeat(
+                delay: Duration(milliseconds: 8000),
+                duration: Duration(seconds: 3),
+                child: CommonText(
+                  text: AppString.project,
+                  fontSize: Resize.featureTitleTextSize(),
+                  bottom: 20,
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ).start,
               projects(),
-              CommonText(
-                text: AppString.skills,
-                fontSize: Resize.featureTitleTextSize(),
-                bottom: 20,
-                color: AppColors.primaryColor,
-                fontWeight: FontWeight.bold,
+              HeartBeat(
+                delay: Duration(milliseconds: 10000),
+                duration: Duration(seconds: 3),
+                child: CommonText(
+                  text: AppString.skills,
+                  fontSize: Resize.featureTitleTextSize(),
+                  bottom: 20,
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ).start,
               Skills(),
               about(),

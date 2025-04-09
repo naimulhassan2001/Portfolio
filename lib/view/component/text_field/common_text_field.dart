@@ -61,7 +61,7 @@ class CommonTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => TextFormField(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      autovalidateMode: AutovalidateMode.onUnfocus,
       keyboardType: keyboardType,
       validator: validator,
       controller: controller,

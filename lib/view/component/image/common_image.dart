@@ -1,14 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:portfolio/utils/app_images.dart';
 
-enum ImageType { png, svg, network }
+enum ImageType { png, network }
 
 class CommonImage extends StatelessWidget {
-
   CommonImage({
     required this.imageSrc,
     this.imageColor,
@@ -16,11 +14,12 @@ class CommonImage extends StatelessWidget {
     this.borderRadius = 0,
     this.width,
     this.size,
-    this.imageType = ImageType.svg,
+    this.imageType = ImageType.png,
     this.fill = BoxFit.contain,
     this.defaultImage = AppImages.profile,
     super.key,
   });
+
   final String imageSrc;
   final String defaultImage;
   final Color? imageColor;
@@ -35,17 +34,6 @@ class CommonImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (imageType == ImageType.svg) {
-      imageWidget = SvgPicture.asset(
-        imageSrc,
-        // ignore: deprecated_member_use
-        color: imageColor,
-        height: size ?? height,
-        width: size ?? width,
-        fit: fill,
-      );
-    }
-
     if (imageType == ImageType.png) {
       imageWidget = ClipRRect(
         borderRadius: BorderRadius.circular(borderRadius),

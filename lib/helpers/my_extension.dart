@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 extension View on num {
   Widget get height => SizedBox(height: toDouble());
@@ -12,8 +11,4 @@ extension View2 on Widget {
   Widget get center => Align(child: this);
 }
 
-extension View3 on DateTime {
-  String get time => DateFormat('h:mm a').format(this);
-  String get date => DateFormat('dd-MM-yyyy').format(this);
-  String get dayName => DateFormat('E').format(this);
-}
+

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/controller/project_controller.dart';
@@ -13,7 +14,9 @@ Widget projects() => GetBuilder<ProjectController>(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: Resize.projectCrossCount(),
             mainAxisExtent: Resize.projectMainAxisExtent()),
-        itemBuilder: (context, index) =>
-            projectItem(controller.projects[index]),
+        itemBuilder: (context, index) => ElasticIn(
+            duration: Duration(seconds: 3),
+            delay: Duration(milliseconds: 8000 + (500 * index)),
+            child: projectItem(controller.projects[index])),
       ),
     );
