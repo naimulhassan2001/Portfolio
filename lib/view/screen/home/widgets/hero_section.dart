@@ -19,8 +19,8 @@ Widget heroSection() => Row(
               if (Responsive.isMobile()) myPicture(),
               if (Responsive.isMobile()) 20.height,
               ElasticIn(
-                delay: Duration(milliseconds: 3000),
-                duration: Duration(seconds: 10),
+                delay: Duration(milliseconds: 800),
+                duration: Duration(seconds: 3),
                 child: CommonText(
                   text: '${AppString.greeting} ${AppString.myName}',
                   fontSize: Resize.homeMyNameTextSize(),
@@ -28,8 +28,8 @@ Widget heroSection() => Row(
                 ),
               ),
               FadeInUp(
-                delay: Duration(milliseconds: 3500),
-                duration: Duration(seconds: 3),
+                delay: Duration(milliseconds: 1000),
+                duration: Duration(seconds: 1),
                 child: CommonText(
                   text: AppString.aboutMeDetails,
                   fontSize: Resize.homeMyNameAboutSize(),
@@ -41,14 +41,14 @@ Widget heroSection() => Row(
               // SocialIcons(),
               // 40.height,
               FadeIn(
-                delay: Duration(milliseconds: 5000),
-                duration: Duration(seconds: 5),
+                delay: Duration(milliseconds: 1000),
+                duration: Duration(seconds: 3),
                 child: Wrap(
                   spacing: Resize.aboutAndContactButtonSpace(),
                   runSpacing: 16.0,
                   children: [
                     HeartBeat(
-                      delay: Duration(milliseconds: 6500),
+                      delay: Duration(milliseconds: 1400),
                       duration: Duration(seconds: 3),
                       child: CommonButton(
                         titleText: AppString.contactMe,
@@ -56,7 +56,7 @@ Widget heroSection() => Row(
                       ),
                     ),
                     HeartBeat(
-                      delay: Duration(milliseconds: 7500),
+                      delay: Duration(milliseconds: 1600),
                       duration: Duration(seconds: 3),
                       child: CommonButton(
                         titleText: AppString.aboutMe,
@@ -77,8 +77,8 @@ Widget heroSection() => Row(
 
 myPicture() {
   return ElasticIn(
-    duration: Duration(milliseconds: 2000),
-    delay: Duration(milliseconds: 1000),
+    duration: Duration(seconds: 3),
+    delay: Duration(milliseconds: 500),
     child: Container(
       decoration: BoxDecoration(
         color: AppColors.white.withOpacity(0.9),

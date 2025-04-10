@@ -16,7 +16,7 @@ Widget projects() => GetBuilder<ProjectController>(
             mainAxisExtent: Resize.projectMainAxisExtent()),
         itemBuilder: (context, index) => ElasticIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 8000 + (500 * index)),
+            delay: Duration(milliseconds: 1800 + (200 * index)),
             child: projectItem(controller.projects[index])),
       ),
     );

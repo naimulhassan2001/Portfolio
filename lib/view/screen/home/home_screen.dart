@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               20.height,
               heroSection(),
               HeartBeat(
-                delay: Duration(milliseconds: 8000),
+                delay: Duration(milliseconds: 1600),
                 duration: Duration(seconds: 3),
                 child: CommonText(
                   text: AppString.project,
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
               ).start,
               projects(),
               HeartBeat(
-                delay: Duration(milliseconds: 10000),
+                delay: Duration(milliseconds: 2500),
                 duration: Duration(seconds: 3),
                 child: CommonText(
                   text: AppString.skills,

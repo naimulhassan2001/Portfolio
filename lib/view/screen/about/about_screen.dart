@@ -11,7 +11,7 @@ Widget about() => Column(
       children: [
         20.height,
         HeartBeat(
-          delay: Duration(milliseconds: 13000),
+          delay: Duration(milliseconds: 4000),
           duration: Duration(seconds: 3),
           child: CommonText(
             text: AppString.aboutMe,
@@ -22,7 +22,7 @@ Widget about() => Column(
         ).start,
         16.height,
         FadeIn(
-          delay: Duration(milliseconds: 14000),
+          delay: Duration(milliseconds: 4200),
           duration: Duration(seconds: 3),
           child: CommonText(
             text: AppString.myDetails,
@@ -31,7 +31,7 @@ Widget about() => Column(
         ),
         32.height,
         FadeIn(
-          delay: Duration(milliseconds: 14500),
+          delay: Duration(milliseconds: 4500),
           duration: Duration(seconds: 3),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,

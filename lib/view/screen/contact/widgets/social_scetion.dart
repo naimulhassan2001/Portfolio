@@ -16,7 +16,7 @@ Widget socialScetion() {
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
       FadeIn(
-        delay: Duration(milliseconds: 15500),
+        delay: Duration(milliseconds: 5000),
         duration: Duration(seconds: 3),
         child: CommonText(
           text: AppString.contactWithMe,
@@ -26,7 +26,7 @@ Widget socialScetion() {
         ).start,
       ),
       FadeIn(
-        delay: Duration(milliseconds: 16000),
+        delay: Duration(milliseconds: 5200),
         duration: Duration(seconds: 3),
         child: CommonText(
           text: AppString.contactDetails,

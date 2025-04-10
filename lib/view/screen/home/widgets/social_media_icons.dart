@@ -50,7 +50,7 @@ class SocialIconsState extends State<SocialIcons> {
               onTap: () => OtherHelper.openUrl(link),
               borderRadius: BorderRadius.circular(50),
               child: ElasticIn(
-                delay: Duration(milliseconds: 16000 + (500 * index)),
+                delay: Duration(milliseconds: 5500 + (300 * index)),
                 duration: const Duration(seconds: 3),
                 child: MouseRegion(
                   onEnter: (_) {

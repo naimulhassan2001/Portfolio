@@ -4,6 +4,7 @@ class AppString {
 
   static const String test = 'test';
   static const String greeting = 'Hi, I am ';
+  static const String softwareEngineer = 'Software Engineer';
   static const String aboutMeDetails =
       'I am a passionate Flutter developer who loves turning ideas into high-performing, visually stunning mobile apps. With expertise in Flutter and Dart, I build smooth, responsive, and scalable applications that deliver a seamless user experience. From UI design to API integration and full-cycle app development, I focus on writing clean, efficient code to bring creative visions to life. My goal is to craft fast, functional, and feature-rich apps that make an impact.';
   static const String contactMe = 'Contact Me';

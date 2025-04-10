@@ -1,7 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:portfolio/core/route/app_routes.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/utils/responsive.dart';
@@ -20,42 +18,38 @@ Widget header() => Column(
                 children: [
                   ElasticIn(
                     duration: Duration(seconds: 1),
-                    delay: Duration(milliseconds: 300),
+                    delay: Duration(milliseconds: 200),
                     child: headerItem(
                       title: AppString.home,
-                      onTap: () => Get.toNamed(AppRoutes.home),
+                    ),
+                  ),
+                  ElasticIn(
+                    duration: Duration(seconds: 1),
+                    delay: Duration(milliseconds: 400),
+                    child: headerItem(
+                      title: AppString.project,
+
                     ),
                   ),
                   ElasticIn(
                     duration: Duration(seconds: 1),
                     delay: Duration(milliseconds: 600),
                     child: headerItem(
-                      title: AppString.project,
-                      onTap: () => Get.toNamed(AppRoutes.home),
-                    ),
-                  ),
-                  ElasticIn(
-                    duration: Duration(seconds: 1),
-                    delay: Duration(milliseconds: 900),
-                    child: headerItem(
                       title: AppString.skills,
-                      onTap: () => Get.toNamed(AppRoutes.home),
                     ),
                   ),
                   ElasticIn(
                     duration: Duration(seconds: 1),
-                    delay: Duration(milliseconds: 1200),
+                    delay: Duration(milliseconds: 800),
                     child: headerItem(
                       title: AppString.about,
-                      onTap: () => Get.toNamed(AppRoutes.home),
                     ),
                   ),
                   ElasticIn(
                     duration: Duration(seconds: 1),
-                    delay: Duration(milliseconds: 1500),
+                    delay: Duration(milliseconds: 1000),
                     child: headerItem(
                       title: AppString.contact,
-                      onTap: () => Get.toNamed(AppRoutes.home),
                     ),
                   ),
                 ],
@@ -65,7 +59,7 @@ Widget header() => Column(
         if (!Responsive.isMobile())
           FadeIn(
             duration: Duration(seconds: 3),
-            delay: Duration(milliseconds: 400),
+            delay: Duration(milliseconds: 200),
             child: Container(
               height: 20,
               width: double.infinity,

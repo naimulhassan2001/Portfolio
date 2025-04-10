@@ -18,7 +18,7 @@ class ContactScreen extends StatelessWidget {
     return Column(
       children: [
         HeartBeat(
-          delay: Duration(milliseconds: 15000),
+          delay: Duration(milliseconds: 4800),
           duration: Duration(seconds: 3),
           child: CommonText(
             text: AppString.contact,

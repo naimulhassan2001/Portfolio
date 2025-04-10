@@ -61,7 +61,7 @@ class Skills extends StatelessWidget {
           itemBuilder: (context, index) {
             return Center(
               child: ElasticIn(
-                delay: Duration(milliseconds: 10500+ (500*index)),
+                delay: Duration(milliseconds: 2500+ (300*index)),
                 duration: Duration(seconds: 3),
                 child: TimelineCard(
                   item: timelineItems[index],

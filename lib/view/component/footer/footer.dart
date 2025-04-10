@@ -5,14 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/utils/responsive.dart';
-import 'package:portfolio/view/component/text/common_text.dart';
 
 Widget footer() => Container(
       padding: EdgeInsets.all(20),
       child: Column(
         children: [
           FadeIn(
-            delay: Duration(milliseconds: 18600),
+            delay: Duration(milliseconds: 8000),
             duration: Duration(seconds: 3),
             child: Container(
               height: 4,
@@ -31,7 +30,7 @@ Widget footer() => Container(
 Widget designAndDevelopment() {
   return ElasticIn(
     duration: Duration(seconds: 3),
-    delay: Duration(milliseconds: 19500),
+    delay: Duration(milliseconds: 8200),
     child: Text.rich(TextSpan(children: [
       TextSpan(
         text: AppString.designAndDevelopment,
