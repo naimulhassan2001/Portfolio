@@ -1,6 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:portfolio/helpers/my_extension.dart';
 import 'package:portfolio/view/screen/home/home_screen.dart';
 

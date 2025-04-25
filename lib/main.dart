@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:portfolio/core/theme/light_theme.dart';
 import 'package:portfolio/core/dependency/dependency_injection.dart';
 import 'package:portfolio/utils/app_string.dart';
-import 'package:portfolio/view/screen/home/home_screen.dart';
 import 'package:portfolio/view/screen/splash/splash_screen.dart';
 
 init() async {
