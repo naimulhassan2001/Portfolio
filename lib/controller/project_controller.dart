@@ -20,9 +20,20 @@ class ProjectController extends GetxController {
       appStoreUrl: 'https://apps.apple.com/us/app/united-app/id6624303228',
     ),
     ProjectModel(
-      name: 'Russend',
-      logo: AppImages.russend,
-      appStoreUrl: 'https://apps.apple.com/us/app/russend/id6503144297',
+      name: 'VapeLess',
+      logo: AppImages.vapeless,
+      appStoreUrl:
+          'https://apps.apple.com/us/app/vapeless-quit-vaping-app/id6742739131',
+    ),
+    ProjectModel(
+      name: 'Pixe Share',
+      logo: AppImages.pixeShare,
+      appStoreUrl: 'https://apps.apple.com/us/app/pixeshare/id6741513200',
+    ),
+    ProjectModel(
+      name: 'Food Sack',
+      logo: AppImages.foodSack,
+      appStoreUrl: 'https://apps.apple.com/us/app/food-sack/id6744678797',
     ),
   ];
 }
