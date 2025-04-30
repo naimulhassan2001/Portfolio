@@ -35,5 +35,10 @@ class ProjectController extends GetxController {
       logo: AppImages.foodSack,
       appStoreUrl: 'https://apps.apple.com/us/app/food-sack/id6744678797',
     ),
+    ProjectModel(
+      name: 'Padel Now',
+      logo: AppImages.padelNow,
+      appStoreUrl: 'https://apps.apple.com/us/app/padel-now/id6743403759',
+    ),
   ];
 }

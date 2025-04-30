@@ -8,4 +8,5 @@ class AppImages {
   static const String vapeless = '$baseurl/vapeless.png';
   static const String foodSack = '$baseurl/food_sack.png';
   static const String pixeShare = '$baseurl/Pixeshare.png';
+  static const String padelNow = '$baseurl/padel_now.png';
 }

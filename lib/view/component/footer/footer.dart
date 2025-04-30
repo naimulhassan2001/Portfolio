@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/helpers/other_helper.dart';
 import 'package:portfolio/utils/app_colors.dart';
 import 'package:portfolio/utils/app_string.dart';
 import 'package:portfolio/utils/responsive.dart';
@@ -21,7 +22,9 @@ Widget footer() => Container(
             ),
           ),
           Align(
-              alignment: Responsive.isMobile() ? Alignment.center : Alignment.centerRight,
+              alignment: Responsive.isMobile()
+                  ? Alignment.center
+                  : Alignment.centerRight,
               child: designAndDevelopment())
         ],
       ),
@@ -42,7 +45,10 @@ Widget designAndDevelopment() {
       ),
       TextSpan(
         text: AppString.knownName,
-        recognizer: TapGestureRecognizer()..onTap = () {},
+        recognizer: TapGestureRecognizer()
+          ..onTap = () {
+            OtherHelper.openUrl('https://wa.me/8801865965581');
+          },
         style: GoogleFonts.ebGaramond(
           color: AppColors.blue,
           fontSize: 14,

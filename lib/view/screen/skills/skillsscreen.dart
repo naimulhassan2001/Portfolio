@@ -23,28 +23,30 @@ class Skills extends StatelessWidget {
 
   static const List<TimelineItem> timelineItems = [
     TimelineItem(
-        year: '2022',
-        title: 'Programming Hero',
-        role: 'Sr. Engineer (Mobile)',
-        subtitle: 'Serving million students with new features.'),
+        year: '2023',
+        title: 'Flutter Development ',
+        role: 'Cross platform (android, ios, web and ete)',
+        subtitle:
+            'Develop multiple applications from a single codebase using Flutter'),
     TimelineItem(
         year: '2021',
-        title: 'Simec System',
-        role: 'Software Engineer (Mobile)',
+        title: 'Android Mobile App Development',
+        role:
+            'Since 2021, I have specialized in Android native development with Java',
         subtitle:
-            'Worked with Bangladesh Govt. and Japanese Clients on HRM solutions.'),
+            'Develop Android mobile applications using both Java (native) and Flutter (cross-platform framework) '),
     TimelineItem(
-        year: '2020',
-        title: 'Spinner Tech',
-        role: 'Android Developer',
+        year: '2023',
+        title: 'ios Development',
+        role: 'I specialize in iOS app development',
         subtitle:
-            'Developed multiple Android applications related to eCommerce and HRM.'),
+            'Develop ios mobile applications using Flutter (cross-platform framework) '),
     TimelineItem(
-        year: '2018',
-        title: 'Metacoders',
-        role: 'Android Developer',
+        year: '2023',
+        title: 'Firebase',
+        role: '',
         subtitle:
-            'Created food delivery and safety-related Android applications.'),
+            'Implement backend functionality using Firebase services such as Cloud Functions, Firestore, Authentication, and Realtime Database to support scalable and secure mobile applications'),
   ];
 
   @override
@@ -61,7 +63,7 @@ class Skills extends StatelessWidget {
           itemBuilder: (context, index) {
             return Center(
               child: ElasticIn(
-                delay: Duration(milliseconds: 2500+ (300*index)),
+                delay: Duration(milliseconds: 2500 + (300 * index)),
                 duration: Duration(seconds: 3),
                 child: TimelineCard(
                   item: timelineItems[index],
@@ -107,7 +109,7 @@ class TimelineCard extends StatelessWidget {
     return Column(
       children: [
         _buildCircle(),
-        Container(width: 4, height: 160, color: Colors.green),
+        Container(width: 4, height: 180, color: Colors.green),
         if (isLast) _buildCircle(),
       ],
     );
@@ -115,10 +117,10 @@ class TimelineCard extends StatelessWidget {
 
   Widget _buildContent() {
     return Container(
-      width: isMobile ? double.infinity : 450,
+      width: isMobile ? double.infinity : 600,
       padding: EdgeInsets.all(16),
       margin: EdgeInsets.symmetric(
-          horizontal: isMobile ? 0 : 24, vertical: isMobile ? 12 : 0),
+          horizontal: isMobile ? 0 : 24, vertical: isMobile ? 12 : 10),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
@@ -128,15 +130,19 @@ class TimelineCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CommonText(
-            text: item.year,
-          ),
-          CommonText(
             text: item.title,
           ),
           CommonText(
-            text: item.role,
+            text: 'Year: ${item.year}',
           ),
-          CommonText(text: item.subtitle),
+          if (item.role.isNotEmpty)
+            CommonText(
+              text: item.role,
+            ),
+          CommonText(
+            text: item.subtitle,
+            maxLines: 3,
+          ),
         ],
       ),
     );
