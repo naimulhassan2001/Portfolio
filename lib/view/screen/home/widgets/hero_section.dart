@@ -81,7 +81,7 @@ myPicture() {
     delay: Duration(milliseconds: 500),
     child: Container(
       decoration: BoxDecoration(
-        color: AppColors.white.withOpacity(0.9),
+        color: AppColors.white.withValues(alpha: 0.9),
         shape: BoxShape.circle,
         border: Border.all(color: AppColors.white, width: 3),
       ),

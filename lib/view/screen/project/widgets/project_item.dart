@@ -19,7 +19,7 @@ Widget projectItem(ProjectModel item) => Stack(
             color: AppColors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
+                color: Colors.grey.withValues(alpha: 0.2),
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: const Offset(0, 3),
@@ -70,7 +70,7 @@ Widget projectItem(ProjectModel item) => Stack(
           margin: EdgeInsets.only(left: 16, top: 16),
           padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
           decoration: BoxDecoration(
-              color: AppColors.black.withOpacity(0.6),
+              color: AppColors.black.withValues(alpha: 0.6),
               borderRadius: BorderRadius.circular(6)),
           child: CommonText(
             text: 'Client Project',
